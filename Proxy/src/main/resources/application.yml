@@ -1,6 +1,7 @@
 eureka:
   client:
     serviceUrl:
+      # 在注册中心注册
       defaultZone: http://localhost:8080/eureka/
 spring:
   application:
@@ -8,7 +9,16 @@ spring:
 server:
   port: 8083
 zuul:
+  host:
+    connect-timeout-millis: 6000
+    socket-timeout-millis: 6000
   routes:
-    MicroServiceBuy: /service/buy/**
-    MicroServiceSell: /service/sell/**
-
+      user-buy:
+        service-id: micro-service-buy
+        path: /buy/**
+        stripPrefix: false
+      user-sell:
+        service-id: micro-service-sell
+        path: /sell/**
+        stripPrefix: false
+  servlet-path: /
