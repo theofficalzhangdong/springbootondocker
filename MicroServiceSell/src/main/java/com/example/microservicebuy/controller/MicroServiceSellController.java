@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 
-@RestController
+@RestController(value = "/sell")
 public class MicroServiceSellController {
-    @RequestMapping("/sell/water")
+    @RequestMapping("/water")
     @ResponseBody
     public String sell() {
         return "this is micro service sell.";

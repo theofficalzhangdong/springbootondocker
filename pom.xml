@@ -9,6 +9,7 @@
 		<module>MicroServiceBuy</module>
 		<module>CenterServer</module>
         <module>Proxy</module>
+        <module>Monitor</module>
     </modules>
 
 	<parent>

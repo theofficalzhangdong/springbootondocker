@@ -9,16 +9,14 @@ spring:
 server:
   port: 8083
 zuul:
-  host:
-    connect-timeout-millis: 6000
-    socket-timeout-millis: 6000
   routes:
-      user-buy:
-        service-id: micro-service-buy
-        path: /buy/**
-        stripPrefix: false
-      user-sell:
-        service-id: micro-service-sell
-        path: /sell/**
-        stripPrefix: false
-  servlet-path: /
+    buy:
+      path: /buy/**  #需要匹配类级别的链路
+      serviceId: micro-service-buy
+    sell:
+      path: /sell/**
+      serviceId: micro-service-sell
+
+# 当以/sell/开头的请求会被转发到micro-service-sell服务,当以/buy/为开头的服务会被转发到micro-service-buy服务
+# 举例：以前访问sell是 ： localhost:8082/sell/water，现在访问sell是 localhost:8083/sell/water，对于用户来说
+# 8082端口是看不到的，只有内部代理zuul会把外部请求转发过去
