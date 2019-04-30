@@ -13,9 +13,9 @@ zuul:
     buy:
       path: /buy/**  #需要匹配类级别的链路
       serviceId: micro-service-buy
-    sell:
-      path: /sell/**
-      serviceId: micro-service-sell
+#    sell:
+#      path: /sell/**
+#      serviceId: micro-service-sell
 
 # 当以/sell/开头的请求会被转发到micro-service-sell服务,当以/buy/为开头的服务会被转发到micro-service-buy服务
 # 举例：以前访问sell是 ： localhost:8082/sell/water，现在访问sell是 localhost:8083/sell/water，对于用户来说

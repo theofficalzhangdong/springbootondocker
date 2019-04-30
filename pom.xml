@@ -10,7 +10,10 @@
 		<module>CenterServer</module>
         <module>Proxy</module>
         <module>Monitor</module>
-    </modules>
+        <module>RibbonService</module>
+		<module>RibbonClient-1</module>
+		<module>RibbonClient-2</module>
+	</modules>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -22,7 +25,6 @@
 	<artifactId>mydocker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>mydocker</name>
-	<description>project for Spring Boot running on docker</description>
 
 	<properties>
 		<java.version>1.8</java.version>

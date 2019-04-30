@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 
-@RestController(value = "/sell")
+@RestController
+@RequestMapping("/sell")
 public class MicroServiceSellController {
-
 
     @Resource(name="testService")
     private IService iService;
 
-    @RequestMapping("/water")
+    @RequestMapping(value = "/water")
     @ResponseBody
     public String sell() {
         return "we sell the water for player which named " + iService.get();
