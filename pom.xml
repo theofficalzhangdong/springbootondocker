@@ -13,6 +13,7 @@
         <module>RibbonService</module>
 		<module>RibbonClient-1</module>
 		<module>RibbonClient-2</module>
+		<module>FeignServer</module>
 	</modules>
 
 	<parent>
