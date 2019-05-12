@@ -1,11 +1,13 @@
 eureka:
   client:
     serviceUrl:
-      # 在注册中心注册
-      defaultZone: http://localhost:8080/eureka/
+      register-with-eureka: true
+      fetch-registry: true
+      # 在注册中心注册 docker地址
+      defaultZone: http://192.168.99.100:8080/eureka/
 spring:
   application:
-    name: Proxy
+    name: proxy
 server:
   port: 8083
 zuul:

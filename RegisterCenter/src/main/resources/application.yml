@@ -1,11 +1,19 @@
+spring:
+  application:
+    name: registerserver
 server:
   port: 8080 # 注册中心占用8080端口，通过http://localhost:8080/可以看到EurekaServer的监控页面
 eureka:
+  server:
+    enable-self-preservation: false
   instance:
     hostname: localhost
+
   client:
     # 以下两个一定是false，表示自己是服务器，不需要从其他主机发现服务
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/  #其实就是 http://localhost:8080/eureka/
+
+spring.cloud.config.localhost.enabled: true

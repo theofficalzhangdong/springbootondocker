@@ -1,0 +1,14 @@
+version: '2'
+services:
+  RegisterCenter:
+    image: localhost
+    ports:
+      - "8080:8080"
+  Proxy:
+    image: proxy
+    ports:
+      - "8083:8083"
+    links:
+      - localhost
+#    depends_on:
+#      - localhost

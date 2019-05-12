@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>MicroServiceBuy</artifactId>
-
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
 </project>
